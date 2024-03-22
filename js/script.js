@@ -156,7 +156,7 @@ class CreatureList {
      * This function must be called first and foremost before doing anything else!
     */
     init() {
-        this.sendFlashMessage("Initiating Creature List...", "", SEVERITIES.SUCCESS);
+        //this.sendFlashMessage("Initiating Creature List...", "", SEVERITIES.SUCCESS);
         this.sort()
         var that = this;
 
@@ -251,7 +251,7 @@ class CreatureList {
         this.render();
 
         // Send a flash message so users now that the initalization is finished
-        this.sendFlashMessage("Finished initiating creature list!", "", SEVERITIES.SUCCESS);
+        //this.sendFlashMessage("Finished initiating creature list!", "", SEVERITIES.SUCCESS);
     }
 
     /**
@@ -310,7 +310,7 @@ class CreatureList {
             this.data.creatures = this.jsonArrayToObjects(json.creatures);
             this.sort();
             this.update();
-            this.sendFlashMessage('Creatures imported from JSON!', 'Import success!', SEVERITIES.SUCCESS);
+            //this.sendFlashMessage('Creatures imported from JSON!', 'Import success!', SEVERITIES.SUCCESS);
         }
         else {
             this.sendFlashMessage('No creatures found in provided File!', 'Error while importing!', SEVERITIES.ERROR);
@@ -751,7 +751,7 @@ class CreatureList {
         var rawData = JSON.parse(localStorage.getItem("dndTracker"));
         this.data = rawData;
         this.data.creatures = this.jsonArrayToObjects(rawData.creatures);
-        this.sendFlashMessage("Loaded successfully from local storage!", "Loading from local storage", SEVERITIES.SUCCESS);
+        //this.sendFlashMessage("Loaded successfully from local storage!", "Loading from local storage", SEVERITIES.SUCCESS);
         this.update();
     }
 
